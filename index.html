@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tinder</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .detailscontainer {
+      background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.334));
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="w-full h-screen bg-black">
+    <div class="imageContainer w-full h-screen relative overflow-hidden">
+      <div class="maincard z-[3] w-[130%] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-[130%]">
+        <img class="w-full h-full object-cover" src="" alt="">
+      </div>
+      <div class="incomingcard z-[2] w-[130%] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-[130%]">
+        <img class="w-full h-full object-cover" src="" alt="">
+      </div>
+    </div>
+  </div>
+
+    </div>
+    <div class="absolute top-0 left-0 z-[4] w-full h-screen  flex flex-col justify-between">
+
+      <div class="navbar  px-5 py-6 flex justify-between   items-center text-white">
+        <div class="prflimg w-[3.5rem] h-[3.5rem] rounded-full overflow-hidden bg-red-600">
+          <img class="w-full h-full object-cover"
+            src="">
+        </div>
+        <h3 class="capitalize font-bold text-xl tracking-tight "> they liked you </h3>
+        <div class=" chaticon  flex  items-center justify-center rounded-full w-[3rem] h-[3rem] bg-white/40">
+          <i class="   ri-wechat-2-line  text-4xl"></i>
+        </div>
+      </div>
+      <div class="detailscontainer w-full">
+        <div class="details  px-5 py-6 w-full">
+          <div class="location flex gap-4">
+            <i
+              class="w-[1.6rem] h-[1.6rem] flex items-center justify-center rounded-full font=semibold bg-white ri-arrow-up-circle-fill"></i>
+            <h3 class="text-white"></h3>
+          </div>
+          <div class="name flex gap-5 mt-1 text-white">
+            <h1 class="font-regular tracking-tight text-5xl">Bouddha</h1>
+            <h1 class="opacity-40 font-regular tracking-tight text-5xl">60</h1>
+          </div>
+          <div class="tags flex gap-3 text-white mt-4 ">
+
+
+          </div>
+          <div class="bio text-white/80 mt-5">
+            <h3 class="text-xl">Bio</h3>
+            <p class="text-lg mt-3"></p>
+          </div>
+          <div class="flex items-start mt-10 gap-3 ">
+            <button class="deny py-3 rounded-xl w-1/2 bg-white">
+              <i class="text-3xl ri-close-line"></i>
+            </button>
+            <button class="accept py-3 rounded-xl w-1/2 bg-[#FC5149]">
+              <i class=" text-3xl text-white ri-heart-2-fill"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script>
+    let users = [
+      {
+        profilePic: "https://images.unsplash.com/photo-1540316264016-aeb7538f4d6f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D",
+        displayPic: "https://images.unsplash.com/photo-1542996966-2e31c00bae31?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        pendingMessage: 4,
+        location: "Kathmandu, Nepal",
+        name: "Aiony Haust",
+        age: 20,
+        interests: ["football", "basketball"],
+        bio: "lorem ajsfhfb ahfddf f fsdfhhjshf dfjh sdjfh",
+        isFriends: null
+      },
+      {
+        profilePic: "https://images.unsplash.com/photo-1623039497550-c4f2ccc7b875?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fHw%3D",
+        displayPic: "https://images.unsplash.com/photo-1621784562807-cb450c2f5efc?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        pendingMessage: 4,
+        location: "Kathmandu, Nepal",
+        name: "Brian Lawson",
+        age: 21,
+        interests: ["football", "basketball"],
+        bio: "lorem ajsfhfb ahfddf f fsdfhhjshf dfjh sdjfh",
+        isFriends: null
+      },
+      {
+        profilePic: "https://images.unsplash.com/photo-1667052439664-69e353c07d7b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D",
+        displayPic: "https://images.unsplash.com/photo-1667052439606-2376a68f8469?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        pendingMessage: 4,
+        location: "Rio,Brazil",
+        name: "Neymar",
+        age: 31,
+        interests: ["football", "basketball"],
+        bio: "lorem ajsfhfb ahfddf f fsdfhhjshf dfjh sdjfh",
+        isFriends: null
+      },
+      
+    ];
+
+
+    function select(elem) {
+      return document.querySelector(elem);
+    }
+
+    let curr = 0;
+
+    (function setInitial() {
+
+      select(".maincard img").src = users[curr].displayPic;
+      select(".incomingcard img").src = users[curr + 1]?.displayPic;
+
+      select(".prflimg img").src = users[curr].profilePic;
+      select(".location h3").textContent = users[curr].location;
+      select(".name h1:nth-child(1)").textContent = users[curr].name;
+      select(".name h1:nth-child(2)").textContent = users[curr].age;
+
+      var clutter = "";
+      users[curr].interests.forEach(function (interest) {
+        clutter += `<div class="tag flex items-center gap-3 bg-white/30 px-3 py-1 rounded-full">
+                <i class="text-sm ri-music-2-fill"></i>
+                <h3 class="text-sm tracking-tight">${interest}</h3>
+              </div>`
+      })
+
+      select(".tags").innerHTML =clutter;
+
+
+      select(".bio p").textContent = users[curr].bio;
+
+
+
+      curr = 2;
+
+
+    })();
+
+    function imageChange() {
+      let tl = gsap.timeline({
+        onComplete : function(){
+          let main = select(".maincard");
+          let incoming = select(".incomingcard");
+
+          incoming.classList.remove("z-[2]");
+          incoming.classList.add("z-[3]");
+          incoming.classList.remove("incomingcard");
+
+          main.classList.remove("z-[3]");
+          main.classList.add("z-[2]");
+
+          gsap.set(main,{
+            scale:1,
+            opacity:1
+          }
+
+          )
+          main.classList.remove("maincard");
+          incoming.classList.add("maincard");
+          main.classList.add("incomingcard");
+
+
+        }
+      });
+        
+      tl.to(".maincard", {
+        scale:1.1,
+        opacity:0,
+        ease: Circ,
+        duration: .9
+      },"a")
+      .form(".incomingcard",{
+        scale:.9,
+        opacity:0,
+        ease:Circ,
+        duration:1.1
+      },"a")
+    }
+
+
+    let deny = select(".deny");
+      let accept = select(".accept");
+
+      deny.addEventListener("click", function() {
+       imageChange();
+      });
+  </script>
+
+</body>
+
+</html>
